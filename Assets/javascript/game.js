@@ -1,0 +1,93 @@
+//GLOBAL VARIABLES
+//-----------------------------------------------
+//Letter array
+var alphabet = ['a','b','c',
+                'd','e','f','g','h','i',
+                'j','k','l','m','n','o',
+                'p','q','r','s','t','u',
+                'v','w','x','y','z'];
+var compGuess = '';
+var wrongGuess = [];
+//Counters
+var wins = 0;
+var losses = 0;
+var guesses = 10;
+
+//FUNCTIONS
+//-----------------------------------------------
+function Reset () { //not currently firing for some reason
+    
+    //ComputerGuess is pulled at random from array
+    var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    console.log('RESET Computer guess is ' + compGuess);
+
+    //RESET
+    //-------------------------------------------
+    userGuess = 0;
+    guesses = 10;
+    wrongGuess = [];
+
+    test=false;
+    startGame();
+
+}
+function startGame() {
+
+    //ComputerGuess is pulled at random from array
+    var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    console.log('Computer Guess is ' + compGuess);
+
+    //RESET
+    //-------------------------------------------
+    guesses = 10;
+    wrongGuess = [];
+
+    //Writes to HTML doc
+    document.getElementById('guessesLeft').innerHTML = guesses;
+	document.getElementById('wins').innerHTML = wins;
+	document.getElementById('losses').innerHTML = losses;
+	document.getElementById('wrongGuess').innerHTML = wrongGuess;
+
+}
+//Game Process
+
+startGame();
+
+//On key-up run this function
+document.onkeyup=function(event) 
+{
+
+    test=true;
+    var userGuess = event.key;
+    console.log('User Guess is ' + userGuess);
+
+//user win -- currently not firing
+if (userGuess === compGuess) {
+    wins++;
+    document.getElementById('wins').innerHTML = wins;
+    alert('You win!');
+    reset();
+} //wrong guess
+else {
+    guesses--;
+
+} //if user guesses the same wrong letter twice, this should stop it from adding to the array - currently still counts as a guess
+if (wrongGuess.indexOf(userGuess) >= 0) {
+
+}    else {
+
+    wrongGuess.push(userGuess);
+    document.getElementById('guessesLeft').innerHTML = guesses;
+    document.getElementById('wrongGuess').innerHTML = wrongGuess;
+    //Test
+    console.log('Wrong guess is ' + wrongGuess);
+    console.log('Guesses left is ' + guesses);
+}
+//user lose
+    if (guesses === 0) {
+        losses++;
+        document.getElementById('losses').innerHTML = losses;
+        alert('You lose!');
+        reset();
+    }
+}

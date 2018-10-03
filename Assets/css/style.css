@@ -1,0 +1,36 @@
+body {
+    background-image: url(../Images/crystal-ball-fortune-teller.jpg);
+    background-size:cover;
+}
+h1, h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container {
+   top:30px;
+}
+.container-bg {
+    background:inherit;
+}
+.container-bg {
+    width: 1500px;
+    height: 800px;
+    background: inherit;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 .5em 1em rgba(0,0,0,.3);
+  }
+  
+  .container-bg::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: inherit;
+    box-shadow: inset 0 0 3000px rgba(255,255,255,.5);
+    filter: blur(10px);
+    margin: -20px;
+  }
