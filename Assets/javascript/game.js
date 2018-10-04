@@ -20,13 +20,13 @@ function reset ()
     
     //ComputerGuess is pulled at random from array
     compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
-    console.log('RESET Computer guess is ' + compGuess);
+    console.log('RESET');
 
     //RESET
     //-------------------------------------------
     userGuess = 0;
     guesses = 10;
-    wrongGuess = [];
+    wrongGuess = []; //currently not resetting array in win scenario
 
     test=false;
     startGame();
@@ -43,6 +43,7 @@ function startGame()
     //-------------------------------------------
     guesses = 10;
     wrongGuess = [];
+    console.log (wrongGuess);
 
     //Writes to HTML doc
     document.getElementById('guessesLeft').innerHTML = guesses;
@@ -51,8 +52,9 @@ function startGame()
 	document.getElementById('wrongGuess').innerHTML = wrongGuess;
 
 }
-//Game Process
 
+//Game Process
+//--------------------------------------------------
 startGame();
 
 //On key-up run this function
@@ -63,11 +65,14 @@ document.onkeyup=function(event)
     var userGuess = event.key;
     console.log('User Guess is ' + userGuess);
     console.log('Computer Guess is ' + compGuess);
-//user win -- currently not firing
+
+if (alphabet.includes(event.key)) {
+
+//user win 
 if (compGuess === userGuess) {
     wins++;
     document.getElementById('wins').innerHTML = wins;
-    alert('You win!');
+    //alert('You win!');
     reset();
 } //wrong guess
 else {
@@ -89,7 +94,8 @@ if (wrongGuess.indexOf(userGuess) >= 0) {
     if (guesses === 0) {
         losses++;
         document.getElementById('losses').innerHTML = losses;
-        alert('You lose!');
+        //alert('You lose!');
         reset();
     }
+}
 }
