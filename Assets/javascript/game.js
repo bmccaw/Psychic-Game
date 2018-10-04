@@ -15,10 +15,11 @@ var guesses = 10;
 
 //FUNCTIONS
 //-----------------------------------------------
-function Reset () { //not currently firing for some reason
+function reset () 
+{ 
     
     //ComputerGuess is pulled at random from array
-    var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log('RESET Computer guess is ' + compGuess);
 
     //RESET
@@ -31,10 +32,11 @@ function Reset () { //not currently firing for some reason
     startGame();
 
 }
-function startGame() {
+function startGame() 
+{
 
     //ComputerGuess is pulled at random from array
-    var compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    compGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log('Computer Guess is ' + compGuess);
 
     //RESET
@@ -60,9 +62,9 @@ document.onkeyup=function(event)
     test=true;
     var userGuess = event.key;
     console.log('User Guess is ' + userGuess);
-
+    console.log('Computer Guess is ' + compGuess);
 //user win -- currently not firing
-if (userGuess === compGuess) {
+if (compGuess === userGuess) {
     wins++;
     document.getElementById('wins').innerHTML = wins;
     alert('You win!');
