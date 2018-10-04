@@ -78,7 +78,7 @@ if (compGuess === userGuess) {
 else {
     guesses--;
 
-} //if user guesses the same wrong letter twice, this should stop it from adding to the array - currently still counts as a guess
+ //if user guesses the same wrong letter twice, this should stop it from adding to the array - currently still counts as a guess
 if (wrongGuess.indexOf(userGuess) >= 0) {
 
 }    else {
@@ -89,6 +89,7 @@ if (wrongGuess.indexOf(userGuess) >= 0) {
     //Test
     console.log('Wrong guess is ' + wrongGuess);
     console.log('Guesses left is ' + guesses);
+}
 }
 //user lose
     if (guesses === 0) {

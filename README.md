@@ -12,5 +12,5 @@ Currently Working:
 Current Bugs:
 ==================
  - ~~User can press keys that are not letter and these are added to the 'Letters guessed' area~~ SOLVED!
- - When win condition fires, letters guessed does not reset and correct guess is added to the list for the next round
+ - ~~When win condition fires, letters guessed does not reset and correct guess is added to the list for the next round~~ SOLVED!
  - Pressing the same letter multiple times exhausts guesses even if it's not reflected on the screen
