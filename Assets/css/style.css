@@ -2,8 +2,8 @@ body {
     background-image: url(../Images/crystal-ball-fortune-teller.jpg);
     background-size:cover;
 }
-h1, h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+h1, h2, h3 {
+    font-family: 'Lobster Two', cursive;
 }
 .container {
    top:30px;

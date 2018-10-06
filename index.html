@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/css/reset.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
 
 </head>
 <body>
@@ -23,15 +24,15 @@
             </div>
         </div>
         <div class="row m-5">
-            <div class="col-sm-4">
+            <div class="col-sm-4 p-5">
                 <h3>Wins: <span id="wins"></span></h3><!--When the key pressed matches the one chosen randomly from the array, increase by 1.-->
                 <br>
                 <h3>Losses: <span id="losses"></span></h3><!--When the guesses counter reaches zero, increase by 1.-->
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-4 text-center p-5">
                 <h3>Guesses left: </h3><br><h1><span id="guessesLeft"></span></h1><!--Total guesses allowed. Start at 10.-->
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-4 text-center p-5">
                 <h3>Your guesses so far:<br><span id="wrongGuess"></span></h3><!--Record every wrong guess here. Once a user picks a wrong letter, they should not be allowed to choose it again.-->
             </div>
         </div>

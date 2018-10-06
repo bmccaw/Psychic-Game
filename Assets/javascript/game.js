@@ -74,16 +74,14 @@ if (compGuess === userGuess) {
     document.getElementById('wins').innerHTML = wins;
     //alert('You win!');
     reset();
-} //wrong guess
-else {
-    guesses--;
-
+} 
  //if user guesses the same wrong letter twice, this should stop it from adding to the array - currently still counts as a guess
 if (wrongGuess.indexOf(userGuess) >= 0) {
 
 }    else {
 
     wrongGuess.push(userGuess);
+    guesses--;
     document.getElementById('guessesLeft').innerHTML = guesses;
     document.getElementById('wrongGuess').innerHTML = wrongGuess;
     //Test
@@ -98,5 +96,4 @@ if (wrongGuess.indexOf(userGuess) >= 0) {
         //alert('You lose!');
         reset();
     }
-}
 }
