@@ -26,7 +26,7 @@ function reset ()
     //-------------------------------------------
     userGuess = 0;
     guesses = 10;
-    wrongGuess = []; //currently not resetting array in win scenario
+    wrongGuess = []; 
 
     test=false;
     startGame();
@@ -75,7 +75,7 @@ if (compGuess === userGuess) {
     //alert('You win!');
     reset();
 } 
- //if user guesses the same wrong letter twice, this should stop it from adding to the array - currently still counts as a guess
+ //if user guesses the same wrong letter twice, this stops it from adding to the array 
 if (wrongGuess.indexOf(userGuess) >= 0) {
 
 }    else {
